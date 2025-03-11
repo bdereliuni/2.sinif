@@ -1,0 +1,5 @@
+// Supabase bağlantı bilgileri
+const SUPABASE_URL = 'https://zspziagdpovsggaqzrzp.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzcHppYWdkcG92c2dnYXF6cnpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDExNzY5ODMsImV4cCI6MjA1Njc1Mjk4M30.yWRu7OKDgwTWQZ6XcukIqRENSc99t5nSPKD93bMPGXo';
+
+// createClient fonksiyonu dışarıdan alınacak
