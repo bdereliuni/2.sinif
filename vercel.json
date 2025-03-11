@@ -4,5 +4,6 @@
     "silent": true
   },
   "cleanUrls": true,
-  "buildCommand": "node create-config.js && cat config-vercel.js"
+  "buildCommand": "node create-config.js",
+  "outputDirectory": "."
 } 

@@ -36,4 +36,15 @@ console.log('Vercel ortam değişkenleri yüklendi');
 
 // Dosyayı yaz
 fs.writeFileSync('config-vercel.js', configContent);
-console.log('config-vercel.js dosyası oluşturuldu'); 
+console.log('config-vercel.js dosyası oluşturuldu');
+
+// Ortam değişkenlerini konsola yazdır (debug için)
+console.log('--------- ORTAM DEĞİŞKENLERİ ---------');
+console.log('OPENROUTER_API_KEY:', openrouterKey ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('OPENROUTER_MODEL:', openrouterModel ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('ELEVENLABS_API_KEY_1:', elevenlabsKey1 ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('ELEVENLABS_API_KEY_2:', elevenlabsKey2 ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('ELEVENLABS_API_KEY_3:', elevenlabsKey3 ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('ELEVENLABS_MODEL:', elevenlabsModel ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('ELEVENLABS_VOICE_ID:', elevenlabsVoiceId ? 'TANIMLI' : 'TANIMLI DEĞİL');
+console.log('-------------------------------------'); 
