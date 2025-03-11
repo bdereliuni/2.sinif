@@ -3,5 +3,6 @@
   "github": {
     "silent": true
   },
-  "cleanUrls": true
+  "cleanUrls": true,
+  "buildCommand": "node create-config.js && cat config-vercel.js"
 } 

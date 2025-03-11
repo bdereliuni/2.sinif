@@ -366,7 +366,7 @@ Yanıtını 3 cümleyle sınırla ve 150 karakteri geçme.
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-                "HTTP-Referer": "https://2-sinif.vercel.app",
+                "HTTP-Referer": "http://192.168.1.106:8080",
                 "X-Title": "2Sinif Quiz App",
                 "Content-Type": "application/json"
             },

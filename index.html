@@ -18,28 +18,49 @@
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzcHppYWdkcG92c2dnYXF6cnpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDExNzY5ODMsImV4cCI6MjA1Njc1Mjk4M30.yWRu7OKDgwTWQZ6XcukIqRENSc99t5nSPKD93bMPGXo';
     </script>
     
-    <!-- Vercel Environment Variables -->
+    <!-- API Yapılandırması - Önce boş tanımla -->
     <script>
-        // Vercel Ortam Değişkenleri - Bu sadece Vercel build sırasında çalışır
         window.AppConfig = {
-            OPENROUTER_API_KEY: "%NEXT_PUBLIC_OPENROUTER_API_KEY%",
-            OPENROUTER_MODEL: "%NEXT_PUBLIC_OPENROUTER_MODEL%",
-            ELEVENLABS_API_KEYS: [
-                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_1%",
-                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_2%",
-                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_3%"
-            ],
-            ELEVENLABS_MODEL: "%NEXT_PUBLIC_ELEVENLABS_MODEL%",
-            ELEVENLABS_VOICE_ID: "%NEXT_PUBLIC_ELEVENLABS_VOICE_ID%"
+            OPENROUTER_API_KEY: "",
+            OPENROUTER_MODEL: "",
+            ELEVENLABS_API_KEYS: ["", "", ""],
+            ELEVENLABS_MODEL: "",
+            ELEVENLABS_VOICE_ID: ""
         };
-
-        // Yerel geliştirme için - Eğer placeholder varsa
-        const localConfigScript = document.createElement('script');
-        localConfigScript.src = 'config.js';
-        localConfigScript.onerror = function() {
-            console.warn('Yerel config.js bulunamadı. Kullanmak için config.example.js dosyasını config.js olarak kopyalayın ve API anahtarlarını doldurun.');
-        };
-        document.head.appendChild(localConfigScript);
+        
+        // Yapılandırma dosyalarını yükle
+        window.addEventListener('DOMContentLoaded', function() {
+            // Önce Vercel yapılandırmasını dene
+            console.log('API yapılandırması yükleniyor...');
+            
+            function loadVercelConfig() {
+                const vercelScript = document.createElement('script');
+                vercelScript.src = 'config-vercel.js';
+                vercelScript.onload = function() {
+                    console.log('Vercel yapılandırması yüklendi');
+                };
+                vercelScript.onerror = function() {
+                    console.log('Vercel yapılandırması bulunamadı, yerel yapılandırma deneniyor...');
+                    loadLocalConfig();
+                };
+                document.head.appendChild(vercelScript);
+            }
+            
+            function loadLocalConfig() {
+                const localScript = document.createElement('script');
+                localScript.src = 'config.js';
+                localScript.onload = function() {
+                    console.log('Yerel yapılandırma yüklendi');
+                };
+                localScript.onerror = function() {
+                    console.warn('API anahtarları yüklenemedi! Lütfen config.example.js dosyasını config.js olarak kopyalayın ve API anahtarlarınızı ekleyin.');
+                };
+                document.head.appendChild(localScript);
+            }
+            
+            // Önce Vercel, sonra yerel yapılandırmayı dene
+            loadVercelConfig();
+        });
     </script>
     
     <!-- AI Services -->
