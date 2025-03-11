@@ -1,3 +1,8 @@
+// API anahtarları kontrolü
+if (!window.AppConfig || !window.AppConfig.OPENROUTER_API_KEY || window.AppConfig.OPENROUTER_API_KEY.includes('%NEXT_PUBLIC_')) {
+    console.error('API anahtarları bulunamadı! Yerel geliştirme için config.js dosyasını oluşturun veya Vercel ortam değişkenlerini ayarlayın.');
+}
+
 // API anahtarı ve model bilgisi - OpenRouter
 const OPENROUTER_API_KEY = window.AppConfig?.OPENROUTER_API_KEY || "";
 const OPENROUTER_MODEL = window.AppConfig?.OPENROUTER_MODEL || "google/gemini-2.0-flash-lite-preview-02-05:free";

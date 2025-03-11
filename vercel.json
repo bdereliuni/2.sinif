@@ -1,37 +1,7 @@
 {
   "name": "2sinif-quiz-app",
-  "buildCommand": "",
-  "installCommand": "",
-  "outputDirectory": ".",
-  "cleanUrls": true,
   "github": {
     "silent": true
   },
-  "build": {
-    "env": {}
-  },
-  "functions": {},
-  "routes": [
-    {
-      "src": "/config.js",
-      "dest": "/config.js"
-    }
-  ],
-  "transforms": [
-    {
-      "src": "/config.js",
-      "dest": "/config.js",
-      "transform": {
-        "replace": {
-          "__OPENROUTER_API_KEY__": "${OPENROUTER_API_KEY}",
-          "__OPENROUTER_MODEL__": "${OPENROUTER_MODEL}",
-          "__ELEVENLABS_API_KEY_1__": "${ELEVENLABS_API_KEY_1}",
-          "__ELEVENLABS_API_KEY_2__": "${ELEVENLABS_API_KEY_2}",
-          "__ELEVENLABS_API_KEY_3__": "${ELEVENLABS_API_KEY_3}",
-          "__ELEVENLABS_MODEL__": "${ELEVENLABS_MODEL}",
-          "__ELEVENLABS_VOICE_ID__": "${ELEVENLABS_VOICE_ID}"
-        }
-      }
-    }
-  ]
+  "cleanUrls": true
 } 

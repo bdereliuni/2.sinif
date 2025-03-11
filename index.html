@@ -18,8 +18,29 @@
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzcHppYWdkcG92c2dnYXF6cnpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDExNzY5ODMsImV4cCI6MjA1Njc1Mjk4M30.yWRu7OKDgwTWQZ6XcukIqRENSc99t5nSPKD93bMPGXo';
     </script>
     
-    <!-- API Anahtarları Yapılandırması -->
-    <script src="config.js"></script>
+    <!-- Vercel Environment Variables -->
+    <script>
+        // Vercel Ortam Değişkenleri - Bu sadece Vercel build sırasında çalışır
+        window.AppConfig = {
+            OPENROUTER_API_KEY: "%NEXT_PUBLIC_OPENROUTER_API_KEY%",
+            OPENROUTER_MODEL: "%NEXT_PUBLIC_OPENROUTER_MODEL%",
+            ELEVENLABS_API_KEYS: [
+                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_1%",
+                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_2%",
+                "%NEXT_PUBLIC_ELEVENLABS_API_KEY_3%"
+            ],
+            ELEVENLABS_MODEL: "%NEXT_PUBLIC_ELEVENLABS_MODEL%",
+            ELEVENLABS_VOICE_ID: "%NEXT_PUBLIC_ELEVENLABS_VOICE_ID%"
+        };
+
+        // Yerel geliştirme için - Eğer placeholder varsa
+        const localConfigScript = document.createElement('script');
+        localConfigScript.src = 'config.js';
+        localConfigScript.onerror = function() {
+            console.warn('Yerel config.js bulunamadı. Kullanmak için config.example.js dosyasını config.js olarak kopyalayın ve API anahtarlarını doldurun.');
+        };
+        document.head.appendChild(localConfigScript);
+    </script>
     
     <!-- AI Services -->
     <script src="services.js"></script>
