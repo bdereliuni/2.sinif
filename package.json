@@ -3,8 +3,5 @@
   "version": "1.0.0",
   "description": "2. Sınıf Eğitim Uygulaması",
   "main": "index.html",
-  "scripts": {
-    "build": "node create-config.js"
-  },
   "private": true
 } 

@@ -1,9 +1,4 @@
 {
   "name": "2sinif-quiz-app",
-  "github": {
-    "silent": true
-  },
-  "cleanUrls": true,
-  "buildCommand": "node create-config.js",
-  "outputDirectory": "."
+  "cleanUrls": true
 } 

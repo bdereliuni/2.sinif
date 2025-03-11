@@ -1,17 +1,16 @@
-/**
- * API Anahtarları Yapılandırma Dosyası - ÖRNEK
- * Kullanım: Bu dosyayı 'config.js' olarak kopyalayın ve API anahtarlarınızı ekleyin.
- */
+// API Anahtarları - ÖRNEK DOSYA
+// Bu dosyayı config.js olarak kopyalayın ve API anahtarlarınızı ekleyin
+console.log('Örnek API yapılandırması yüklendi - gerçek API anahtarlarınızı ekleyin');
 
-// Bu değişkenlerin değerleri Vercel ortam değişkenlerinden gelecek
+// API anahtarlarını ayarla
 window.AppConfig = {
-    OPENROUTER_API_KEY: "",  // Vercel'de NEXT_PUBLIC_OPENROUTER_API_KEY olarak tanımlayın
-    OPENROUTER_MODEL: "",    // Vercel'de NEXT_PUBLIC_OPENROUTER_MODEL olarak tanımlayın
-    ELEVENLABS_API_KEYS: [   // Vercel'de NEXT_PUBLIC_ELEVENLABS_API_KEY_1, _2, _3 olarak tanımlayın
-        "", 
-        "", 
-        ""
+    OPENROUTER_API_KEY: "OPENROUTER_API_KEY_BURAYA",
+    OPENROUTER_MODEL: "OPENROUTER_MODEL_BURAYA",
+    ELEVENLABS_API_KEYS: [
+        "ELEVENLABS_API_KEY_1_BURAYA",
+        "ELEVENLABS_API_KEY_2_BURAYA", 
+        "ELEVENLABS_API_KEY_3_BURAYA"
     ],
-    ELEVENLABS_MODEL: "",    // Vercel'de NEXT_PUBLIC_ELEVENLABS_MODEL olarak tanımlayın
-    ELEVENLABS_VOICE_ID: ""  // Vercel'de NEXT_PUBLIC_ELEVENLABS_VOICE_ID olarak tanımlayın
+    ELEVENLABS_MODEL: "ELEVENLABS_MODEL_BURAYA",
+    ELEVENLABS_VOICE_ID: "ELEVENLABS_VOICE_ID_BURAYA"
 }; 

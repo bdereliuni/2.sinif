@@ -18,8 +18,9 @@
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzcHppYWdkcG92c2dnYXF6cnpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDExNzY5ODMsImV4cCI6MjA1Njc1Mjk4M30.yWRu7OKDgwTWQZ6XcukIqRENSc99t5nSPKD93bMPGXo';
     </script>
     
-    <!-- API Yapılandırması - Önce boş tanımla -->
+    <!-- API Yapılandırması -->
     <script>
+        // Boş yapılandırma - API anahtarları config.js'den yüklenecek
         window.AppConfig = {
             OPENROUTER_API_KEY: "",
             OPENROUTER_MODEL: "",
@@ -28,38 +29,14 @@
             ELEVENLABS_VOICE_ID: ""
         };
         
-        // Yapılandırma dosyalarını yükle
-        window.addEventListener('DOMContentLoaded', function() {
-            // Önce Vercel yapılandırmasını dene
-            console.log('API yapılandırması yükleniyor...');
-            
-            function loadVercelConfig() {
-                const vercelScript = document.createElement('script');
-                vercelScript.src = 'config-vercel.js';
-                vercelScript.onload = function() {
-                    console.log('Vercel yapılandırması yüklendi');
-                };
-                vercelScript.onerror = function() {
-                    console.log('Vercel yapılandırması bulunamadı, yerel yapılandırma deneniyor...');
-                    loadLocalConfig();
-                };
-                document.head.appendChild(vercelScript);
-            }
-            
-            function loadLocalConfig() {
-                const localScript = document.createElement('script');
-                localScript.src = 'config.js';
-                localScript.onload = function() {
-                    console.log('Yerel yapılandırma yüklendi');
-                };
-                localScript.onerror = function() {
-                    console.warn('API anahtarları yüklenemedi! Lütfen config.example.js dosyasını config.js olarak kopyalayın ve API anahtarlarınızı ekleyin.');
-                };
-                document.head.appendChild(localScript);
-            }
-            
-            // Önce Vercel, sonra yerel yapılandırmayı dene
-            loadVercelConfig();
+        // Yerel config.js dosyasını yükle (sadece yerel geliştirme için)
+        document.addEventListener('DOMContentLoaded', function() {
+            const configScript = document.createElement('script');
+            configScript.src = 'config.js';
+            configScript.onerror = function() {
+                console.warn('config.js bulunamadı. Yerel geliştirme için config.js dosyasını oluşturun.');
+            };
+            document.head.appendChild(configScript);
         });
     </script>
     

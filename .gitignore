@@ -1,5 +1,6 @@
 # API anahtarlarını içeren dosyalar
 config.js
+config.vercel.js
 .env
 
 # Oluşturulan dosyalar ve klasörler
