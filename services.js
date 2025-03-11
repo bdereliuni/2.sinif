@@ -1,5 +1,5 @@
 // API anahtarı ve model bilgisi - OpenRouter
-const OPENROUTER_API_KEY = "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";
+const OPENROUTER_API_KEY = "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";
 const OPENROUTER_MODEL = "google/gemini-2.0-flash-lite-preview-02-05:free";
 
 // API anahtarları ve model bilgisi - ElevenLabs
