@@ -1,16 +1,12 @@
 // API anahtarı ve model bilgisi - OpenRouter
-const OPENROUTER_API_KEY = "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";
-const OPENROUTER_MODEL = "google/gemini-2.0-flash-lite-preview-02-05:free";
+const OPENROUTER_API_KEY = window.AppConfig?.OPENROUTER_API_KEY || "";
+const OPENROUTER_MODEL = window.AppConfig?.OPENROUTER_MODEL || "google/gemini-2.0-flash-lite-preview-02-05:free";
 
 // API anahtarları ve model bilgisi - ElevenLabs
-const ELEVENLABS_API_KEYS = [
-    "sk_526f3404a67d1a5c5a48b20982aedb29310f42efcf778673",
-    "sk_c438602f118c3fc8ed59f4a32a75dff4d5f026cfa62f230a", 
-    "sk_641bb730cd6e4ad7f6ca31053fe9a327a19e3cd0063beae8"
-];
-const ELEVENLABS_MODEL = "eleven_flash_v2_5";
+const ELEVENLABS_API_KEYS = window.AppConfig?.ELEVENLABS_API_KEYS || [];
+const ELEVENLABS_MODEL = window.AppConfig?.ELEVENLABS_MODEL || "eleven_flash_v2_5";
 // Hızlı yanıt veren Türkçe uyumlu ses
-const ELEVENLABS_VOICE_ID = "9BWtsMINqrJLrRacOk9x";
+const ELEVENLABS_VOICE_ID = window.AppConfig?.ELEVENLABS_VOICE_ID || "9BWtsMINqrJLrRacOk9x";
 
 // Cesaretlendirici ifadeler listesi
 const ENCOURAGEMENT_PHRASES = [
